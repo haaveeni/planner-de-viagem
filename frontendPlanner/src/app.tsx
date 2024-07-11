@@ -114,11 +114,39 @@ export function App() {
       {isGuestsModalOpen && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
           <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Selecionar convidados</h2>
-              <button type="button" onClick={closeGuestsModal}>
-                <X className="size-5 text-zinc-400" />
-              </button>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg font-semibold">Selecionar convidados</h2>
+                <button type="button" onClick={closeGuestsModal}>
+                  <X className="size-5 text-zinc-400" />
+                </button>
+              </div>
+              <p className="text-sm text-zinc-400">
+                Os convidados irão receber e-mails para confirmar a participação
+                na viagem.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
+                <span className="text-zinc-300">jessica.white44@yahoo.com</span>
+                <button type="button">
+                  <X className="size-4 text-zinc-400" />
+                </button>
+              </div>
+
+              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
+                <span className="text-zinc-300">erik_leffler3@gmail.com</span>
+                <button type="button">
+                  <X className="size-4 text-zinc-400" />
+                </button>
+              </div>
+
+              <div className="py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2">
+                <span className="text-zinc-300">rebekah.conn21@gmail.com</span>
+                <button type="button">
+                  <X className="size-4 text-zinc-400" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
