@@ -51,13 +51,13 @@ export function ConfirmTripModal({
               className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
             />
           </div>
+          <button
+            type="submit"
+            className="bg-lime-300 w-full text-lime-950 rounded-lg px-5 h-11 font-medium text-center gap-2 hover:bg-lime-400"
+          >
+            Confirmar criação de viagem
+          </button>
         </form>
-        <button
-          type="submit"
-          className="bg-lime-300 w-full text-lime-950 rounded-lg px-5 h-11 font-medium text-center gap-2 hover:bg-lime-400"
-        >
-          Confirmar criação de viagem
-        </button>
       </div>
     </div>
   );
