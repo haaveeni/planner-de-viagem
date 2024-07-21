@@ -1,17 +1,18 @@
 import { FormEvent, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { InviteGuestsModal } from "./invite-guests-modal";
 import { ConfirmTripModal } from "./confirm-trip-modal";
 import { DestinationAndDateStep } from "./steps/destination-and-date-step";
 import { InviteGuestsStep } from "./steps/invite-guests-step";
 import { DateRange } from "react-day-picker";
+import { api } from "../../lib/axios";
 
 export function CreateTripPage() {
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false);
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false);
-  const [isConfirmTripModalOpen, setisConfirmTripModalOpen] = useState(false);
+  const [isConfirmTripModalOpen, setIsConfirmTripModalOpen] = useState(false);
+  const [emailsToInvite, setEmailsToInvite] = useState(["teste@gmail.com"]);
 
   const [destination, setDestination] = useState("");
   const [ownerName, setOwnerName] = useState("");
@@ -20,7 +21,6 @@ export function CreateTripPage() {
     DateRange | undefined
   >();
 
-  const [emailsToInvite, setEmailsToInvite] = useState(["teste@gmail.com"]);
   function openGuestsInput() {
     setIsGuestsInputOpen(true);
   }
@@ -34,6 +34,13 @@ export function CreateTripPage() {
 
   function closeGuestsModal() {
     setIsGuestsModalOpen(false);
+  }
+  function openConfirmTripModal() {
+    setIsConfirmTripModalOpen(true);
+  }
+
+  function closeConfirmTripModal() {
+    setIsConfirmTripModalOpen(false);
   }
 
   function addNewEmailToInvite(event: FormEvent<HTMLFormElement>) {
@@ -61,23 +68,37 @@ export function CreateTripPage() {
     setEmailsToInvite(newEmailList);
   }
 
-  function openConfirmTripModal() {
-    setisConfirmTripModalOpen(true);
-  }
-
-  function closeConfirmTripModal() {
-    setisConfirmTripModalOpen(false);
-  }
-
-  function createTrip(event: FormEvent<HTMLFormElement>) {
+  async function createTrip(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(destination);
-    console.log(ownerName);
-    console.log(ownerEmail);
-    console.log(eventStartAndEndDates);
-    console.log(emailsToInvite);
 
-    // navigate("/trips/123");
+    if (!destination) {
+      return;
+    }
+
+    if (!eventStartAndEndDates?.from || !eventStartAndEndDates?.to) {
+      return;
+    }
+
+    if (emailsToInvite.length === 0) {
+      return;
+    }
+
+    if (!ownerName || !ownerEmail) {
+      return;
+    }
+
+    const response = await api.post("/trips", {
+      destination,
+      starts_at: eventStartAndEndDates.from,
+      ends_at: eventStartAndEndDates.to,
+      emails_to_invite: emailsToInvite,
+      owner_name: ownerName,
+      owner_email: ownerEmail,
+    });
+
+    const { tripId } = response.data;
+
+    navigate(`/trips/${tripId}`);
   }
 
   return (
@@ -109,14 +130,15 @@ export function CreateTripPage() {
           )}
         </div>
 
-        <p className="text-sm text-zinc-300">
+        <p className="text-sm text-zinc-500">
           Ao planejar sua viagem pela plann.er você automaticamente concorda{" "}
-          <br></br>com nossos{" "}
-          <a href="#" className="text-zinc-500 underline">
+          <br />
+          com nossos{" "}
+          <a className="text-zinc-300 underline" href="#">
             termos de uso
           </a>{" "}
           e{" "}
-          <a href="#" className="text-zinc-500 underline">
+          <a className="text-zinc-300 underline" href="#">
             políticas de privacidade
           </a>
           .
