@@ -75,17 +75,7 @@ O layout da aplicação está disponível no Figma:
 
 ### Web
 
-<img width="1428" alt="Captura de Tela 2024-07-22 às 15 39 11" src="https://github.com/user-attachments/assets/94374773-28c9-4c5d-852d-930484dc7895">
-
-<img width="1409" alt="Captura de Tela 2024-07-22 às 15 40 21" src="https://github.com/user-attachments/assets/d43683b3-fca3-4b28-a7e5-6a82eae88c81">
-
-<img width="1417" alt="Captura de Tela 2024-07-22 às 15 42 45" src="https://github.com/user-attachments/assets/4a0e213c-7f13-4bee-b974-60f0edbbf362">
-
-<img width="1421" alt="Captura de Tela 2024-07-22 às 15 43 20" src="https://github.com/user-attachments/assets/74a19f02-d718-4cf5-b4ce-1d2ae3562f1c">
-
-<img width="1414" alt="Captura de Tela 2024-07-22 às 15 44 19" src="https://github.com/user-attachments/assets/0f2dbc75-b18d-4b6a-aa7f-62db0ae0065c">
-
-<img width="1397" alt="Captura de Tela 2024-07-22 às 15 45 31" src="https://github.com/user-attachments/assets/a2cd9e93-795c-426d-b298-a103972e2c1e">
+https://github.com/user-attachments/assets/74c23534-be4a-4836-8daf-0c217b9ca0f7
 
 ---
 
