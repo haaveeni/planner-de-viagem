@@ -26,7 +26,7 @@ export function CreateActivityModal({
       occurs_at,
     });
 
-    closeCreateActivityModal();
+    window.document.location.reload();
   }
 
   return (
@@ -61,6 +61,7 @@ export function CreateActivityModal({
                 placeholder="Data e horário da atividade"
                 className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1 [color-scheme:dark]"
               />
+              ``
             </div>
           </div>
 
