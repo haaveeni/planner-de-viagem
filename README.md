@@ -90,7 +90,9 @@ Este projeto é divido em duas partes:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 
-#### 🎲 Rodando o Backend (servidor)
+
+#### 🧭 Rodando a aplicação web (Frontend)
+
 
 ```bash
 
@@ -110,7 +112,7 @@ $ npm run dev
 
 ```
 
-#### 🧭 Rodando a aplicação web (Frontend)
+#### 🎲 Rodando o Backend (servidor)
 
 ```bash
 
